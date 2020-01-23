@@ -14,28 +14,26 @@ public class Solution {
             while (account2Idx < accounts.size()) {
                 List<String> account2 = accounts.get(account2Idx);
 
-                boolean sameUserAccounts = false;
-
-                if (account1.get(0).equals(account2.get(0))) {
-                    outer:
-                    for (int i = 1; i < account1.size(); i++) {
-                        for (int j = 1; j < account2.size(); j++) {
-                            if (account1.get(i).equals(account2.get(j))) {
-                                sameUserAccounts = true;
-                                break outer;
-                            }
-                        }
-                    }
-                }
+                boolean sameUserAccounts = areSameUserAccounts(account1, account2);
 
                 System.out. printf("Accounts %d and %d are of " + (sameUserAccounts ? "same user" : "different users") + "\n", account1Idx, account2Idx, sameUserAccounts);
-
                 account2Idx++;
             }
-
             account1Idx++;
         }
-
         return null;
+    }
+
+    private boolean areSameUserAccounts(List<String> account1, List<String> account2) {
+
+        if (!account1.get(0).equals(account2.get(0))) return false;
+
+        for (int i = 1; i < account1.size(); i++) {
+            for (int j = 1; j < account2.size(); j++) {
+                if (account1.get(i).equals(account2.get(j))) return true;
+            }
+        }
+
+        return false;
     }
 }
