@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -9,14 +9,14 @@ public class Main {
     }
 
     private static List<List<String>> loadAccounts() {
-        return List.of(
-                List.of("Mark", "mark1@gmail.com", "mark2@gmail.com", "mark3@gmail.com"),
-                List.of("Peter", "peter1@gmail.com", "peter2@gmail.com", "peter3@gmail.com"),
-                List.of("John", "john1@gmail.com", "john2@gmail.com", "john3@gmail.com"),
-                List.of("Peter", "peter2@gmail.com", "peter4@gmail.com", "peter5@gmail.com"),
-                List.of("Kate", "kate1@gmail.com", "kate2@gmail.com", "kate3@gmail.com"),
-                List.of("Ann", "john1@gmail.com", "john2@gmail.com", "john3@gmail.com"),
-                List.of("Peter", "peter6@gmail.com", "peter7@gmail.com", "peter5@gmail.com")
-        );
+        return new ArrayList<>(Arrays.asList(
+                new ArrayList<>(Arrays.asList("Mark", "mark1@gmail.com", "mark2@gmail.com", "mark3@gmail.com")),
+                new ArrayList<>(Arrays.asList("Peter", "peter1@gmail.com", "peter2@gmail.com", "peter3@gmail.com")),
+                new ArrayList<>(Arrays.asList("John", "john1@gmail.com", "john2@gmail.com", "john3@gmail.com")),
+                new ArrayList<>(Arrays.asList("Peter", "peter2@gmail.com", "peter4@gmail.com", "peter5@gmail.com")),
+                new ArrayList<>(Arrays.asList("Kate", "kate1@gmail.com", "kate2@gmail.com", "kate3@gmail.com")),
+                new ArrayList<>(Arrays.asList("Ann", "ann1@gmail.com", "ann2@gmail.com", "ann3@gmail.com")),
+                new ArrayList<>(Arrays.asList("Peter", "peter6@gmail.com", "peter7@gmail.com", "peter5@gmail.com"))
+        ));
     }
 }
